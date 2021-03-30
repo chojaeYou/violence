@@ -1,4 +1,4 @@
 from datetime import datetime
-time = datetime.now()[:-11]
+time = str(datetime.now())[:-10]
 print(time)
 # Create your tests here.
