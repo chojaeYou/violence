@@ -18,6 +18,7 @@ def send_kakao(text, phone):
             'from': from_number,
             'text': text,
             'kakaoOptions': {
+                'disableSms':True,
                 'pfId': pfid,       # PFID 입력
                 'templateId': templateId  # 템플릿아이디 입력
             }

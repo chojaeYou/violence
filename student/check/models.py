@@ -13,7 +13,7 @@ class Student(models.Model):
     st_phone=models.TextField(default='')
     fee_day=models.TextField(default='')
     step=models.TextField(default='')
-
+    reg_date=models.TextField(default='')
 class Student_check(models.Model):
     st_id = models.ForeignKey("Student", on_delete=models.CASCADE)
     name = models.TextField(default='')

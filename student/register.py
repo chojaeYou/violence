@@ -7,14 +7,16 @@ from check.models import Student
 
 
 data = pd.read_csv(r"st.csv")
-print(data)
-for school, grade, name, phone, time, date, st_phone, fee_day, step, _ in data.loc:
+# print(data)
+for num,school, grade, name, phone, time, date, st_phone, fee_day, step, reg_date in data.loc:
+
     phone = str(phone)
     phone = phone.replace('-', '')
-    if phone[0] != 0:
+    if phone!='nan' and phone[0] != 0:
         phone = '0'+phone
-    obj = Student(school=school, grade=grade, name=name, phone=phone,
-                  time=time, date=date, st_phone=st_phone, fee_day=fee_day, step=step)
+        phone = phone[:len(phone)-2]
+    obj = Student(id=num,school=school, grade=grade, name=name, phone=phone,
+                  time=time, date=date, st_phone=st_phone, fee_day=fee_day, step=step,reg_date=reg_date)
     if Student.objects.filter(name=name).exists():
         pass
     else:
