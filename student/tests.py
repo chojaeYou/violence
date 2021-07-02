@@ -1,4 +1,7 @@
-from datetime import datetime
-time = str(datetime.now())[:-10]
-print(time)
-# Create your tests here.
+
+import base64
+def divide(imgstring):
+    imgdata = base64.b64decode(imgstring)
+    filename = 'image.jpg'
+    with open(filename, 'wb') as f:
+        f.write(imgdata)

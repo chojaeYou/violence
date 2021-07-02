@@ -4,7 +4,7 @@ import configparser
 libdir = os.path.dirname(__file__)
 
 config = configparser.ConfigParser()
-config.read(libdir + './config.ini', encoding='UTF8')
+config.read(libdir + '/config.ini')
 
 apiKey = config['AUTH']['api_key']
 apiSecret = config['AUTH']['api_secret']
